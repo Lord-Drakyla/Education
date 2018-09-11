@@ -1,7 +1,9 @@
-import Classes.Enums.Candy;
-import Classes.Enums.HotDrink;
-import Classes.Enums.Juice;
-import Classes.VendingMachine;
+package Task4;
+
+import Task4.Classes.Enums.Candy;
+import Task4.Classes.Enums.HotDrink;
+import Task4.Classes.Enums.Juice;
+import Task4.Classes.VendingMachine;
 
 public class Main {
 

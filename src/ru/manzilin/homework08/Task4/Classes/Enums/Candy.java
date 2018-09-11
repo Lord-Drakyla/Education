@@ -1,4 +1,4 @@
-package Classes.Enums;
+package Task4.Classes.Enums;
 
 public enum Candy {
     ALPENGOLD("Альпийский молочный", 10), ROTFRONT("Красный Октябрь", 20);

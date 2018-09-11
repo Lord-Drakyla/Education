@@ -1,4 +1,4 @@
-package Classes.Enums;
+package Task4.Classes.Enums;
 
 public enum HotDrink {
     COFFEE("Кофе", 50), TEA("Чай", 20);

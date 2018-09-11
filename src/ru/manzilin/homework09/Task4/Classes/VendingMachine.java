@@ -1,6 +1,6 @@
-package Classes;
+package ru.manzilin.homework09.Task4.Classes;
 
-import Classes.Enums.*;
+import ru.manzilin.homework09.Task4.Classes.Enums.*;
 
 public class VendingMachine {
     private double money = 0;
