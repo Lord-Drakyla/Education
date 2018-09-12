@@ -22,7 +22,7 @@ public class Worm extends Animal implements Run{
 
     @Override
     public void canRun() {
-        System.out.println("Стараюсь, хотя скоорость не намного выше");
+        System.out.println("Стараюсь, хотя скорость не намного выше");
     }
 
     @Override
