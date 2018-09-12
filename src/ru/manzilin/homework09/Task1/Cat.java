@@ -1,9 +1,10 @@
 package ru.manzilin.homework09.Task1;
 
 
+import ru.manzilin.homework09.Task2.*;
 
-public class Cat extends Animal{
-    private String name;
+public class Cat extends Animal implements Fly, Run, Swim{
+
 
     public Cat() {
     }
@@ -18,5 +19,25 @@ public class Cat extends Animal{
     @Override
     public String say() {
         return "Мяу-Мяу";
+    }
+
+    @Override
+    public void canFly() {
+        System.out.println("На самом деле неправда");
+    }
+
+    @Override
+    public void canRun() {
+        System.out.println("люблю бегать за мышами");
+    }
+
+    @Override
+    public void canWalk() {
+        System.out.println("люблю ходить около хозяйки");
+    }
+
+    @Override
+    public void canSwim() {
+        System.out.println("Не люблю купаться!!!");
     }
 }

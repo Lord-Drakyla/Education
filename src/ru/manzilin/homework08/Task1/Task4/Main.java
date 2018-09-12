@@ -1,9 +1,9 @@
-package ru.manzilin.homework09.Task4;
+package ru.manzilin.homework08.Task1.Task4;
 
-import ru.manzilin.homework09.Task4.Classes.Enums.Candy;
-import ru.manzilin.homework09.Task4.Classes.Enums.HotDrink;
-import ru.manzilin.homework09.Task4.Classes.Enums.Juice;
-import ru.manzilin.homework09.Task4.Classes.VendingMachine;
+import ru.manzilin.homework08.Task1.Task4.Classes.Enums.Candy;
+import ru.manzilin.homework08.Task1.Task4.Classes.Enums.HotDrink;
+import ru.manzilin.homework08.Task1.Task4.Classes.Enums.Juice;
+import ru.manzilin.homework08.Task1.Task4.Classes.VendingMachine;
 
 public class Main {
 

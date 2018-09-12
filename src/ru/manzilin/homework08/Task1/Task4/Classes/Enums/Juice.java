@@ -1,4 +1,4 @@
-package ru.manzilin.homework09.Task4.Classes.Enums;
+package ru.manzilin.homework08.Task1.Task4.Classes.Enums;
 
 public enum Juice {
     ORANGE("Апельсиновый сок", 100), LEMON("Лимонный сок", 200);

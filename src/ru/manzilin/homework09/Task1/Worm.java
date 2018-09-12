@@ -1,9 +1,9 @@
 package ru.manzilin.homework09.Task1;
 
 
+import ru.manzilin.homework09.Task2.*;
+public class Worm extends Animal implements Run{
 
-public class Worm extends Animal{
-    private String name;
 
     public Worm() {
     }
@@ -18,5 +18,15 @@ public class Worm extends Animal{
     @Override
     public String say() {
         return "Хрум-хрум?";
+    }
+
+    @Override
+    public void canRun() {
+        System.out.println("Стараюсь, хотя скоорость не намного выше");
+    }
+
+    @Override
+    public void canWalk() {
+        System.out.println("Как хорошо под "+Run.PLACE);
     }
 }
