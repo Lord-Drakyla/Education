@@ -4,4 +4,5 @@ public class FoodNegativeException extends RuntimeException {
     public FoodNegativeException(String message) {
         super(message);
     }
+
 }
