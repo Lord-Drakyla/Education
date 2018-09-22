@@ -1,17 +1,18 @@
-package ru.manzilin.homework.h_13.Task1;
-
+package ru.manzilin.homework.h_14.Task1;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.manzilin.homework.h_13.Task1.Exceptions.*;
-import ru.manzilin.homework.h_13.Task1.drinks.*;
+import ru.manzilin.homework.h_14.Task1.Exceptions.*;
+import ru.manzilin.homework.h_14.Task1.drinks.DrinkType;
+
 import java.util.Scanner;
 
 
 public class Main {
     private static VendingMachine vm = new VendingMachine();
-    private static final Logger log1 = LoggerFactory.getLogger(Main.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Main.class);
     public static void main(String[] args) {
-        log1.info("Сообщение от slf4j");
+        LOG.info("Начало работы программы");
+        LOG.trace("-- main() > получил кол-во параметров: {}", args.length);
         System.out.println("Наши напитки: ");
         for (String line : vm.getDrinkTypes()) {
             System.out.println(line);
@@ -36,6 +37,7 @@ public class Main {
                 }
                 case "end": {
                     processEnd();
+                    LOG.info("Конец работы программы");
                     return;
                 }
                 case "help": {
@@ -53,22 +55,13 @@ public class Main {
      * обработка добавления денег в автомат
      * @param money - сумма
      */
-    private static void processAddMoney(int money)  {
+    private static void processAddMoney(int money)  throws MoneyEatingException {
         // TODO: добавить обработку исключительной ситуации - замятия
-        double localMoney=0;
-        try{
             System.out.println("Текущий баланс: " + vm.addMoney(money));
+            LOG.debug("-- processAddMoney() > получил параметр: {}", money);
+            LOG.info("Количество денег - {}", money);
 
-        }catch (ru.manzilin.homework.h_14.Task1.Exceptions.MoneyEatingException e){
-            localMoney=  vm.getBalance() -  e.getSumEatMoney();
-            e.getMessage();
-
-
-
-        } finally {
-            System.out.println("Возвращаем вам ваши деньги: " + localMoney);
         }
-    }
 
     /**
      * обработка получения напитка
@@ -82,25 +75,27 @@ public class Main {
                 System.out.println("Ммм! " + drinkType.getName() + "!");
             } else {
                 System.out.println("Напиток почему-то не получен...");
+                LOG.debug("Напиток почему-то не получен \n -- processAddMoney() > получил параметр: {}", key);
             }
         }catch (MoneyNotEnoughExceprion e){
             e.getMessage();
-            log1.error("Проблемы с деньгами", e);
+            LOG.error("Проблемы с деньгами", e);
 
         }catch (GoodsExceprion e){
             e.getMessage();
-            log1.error("Проблемы с товаром", e);
+            LOG.error("Проблемы с товаром", e);
 
-        }catch (MoneyEatingException e){
-            double localMoney =  vm.getBalance() -  e.getSumEatMoney();
+        } catch (MoneyEatingException e){
+            vm.setBalance(vm.getBalance() -  e.getSumEatMoney());
+            e.returnMoney();
+            LOG.error("Количество замятых денег - {}",  e.getSumEatMoney(), e);
             e.getMessage();
-            log1.error("Количество замятых денег - {}", localMoney, e);
-            System.out.println("Возвращаем вам ваши деньги: " + localMoney);
         } catch (VenMachineExceprion e) {
             e.getMessage();
-            log1.error("Проблемы с работой автомата", e);
+            LOG.error("Проблемы с работой автомата", e);
         } finally {
             processEnd();
+
         }
 
     }
