@@ -11,9 +11,17 @@ public class Mother extends Homo {
     }
 
     public void eat (Food food, Child child){
-        if (child.eatUp(food.getTypeFood())){
+        try{
+            if (child.eatUp(food)){
             System.out.println("День прекрасный, ребенок накормленный");
         }
+
+        }catch (FoodNegativeException ex){
+            ex.printStackTrace();
+        }finally {
+            child.kissMother();
+        }
+
     }
 
 

@@ -7,7 +7,5 @@ public abstract class Food {
         this.typeFood = typeFood;
     }
 
-    public String getTypeFood() {
-        return typeFood;
-    }
+    public String getCheckChild(){return null;}
 }

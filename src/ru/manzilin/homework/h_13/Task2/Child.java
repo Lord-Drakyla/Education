@@ -1,17 +1,17 @@
 package ru.manzilin.homework.h_13.Task2;
 
+import ru.manzilin.homework.h_13.Task2.Food.*;
+
 class Child extends Homo{
     final String PROPERTY = "Воспитанный";
     private String[] foodList = {"Burger"};
     Child(String name) {
         super(name);
     }
-    public boolean eatUp(String food) {
-        for (String local : this.foodList) {
-            if (food == local) {
+    public boolean eatUp(Food food) {
+        if (food.getCheckChild() != "Годен") {
                 throw new FoodNegativeException("Еда не подошла ребенку. Подбирайте лучше");
             }
-        }
         return true;
     }
     public void kissMother() {
