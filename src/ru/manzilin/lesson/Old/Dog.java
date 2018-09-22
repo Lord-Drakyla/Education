@@ -1,4 +1,4 @@
-package ru.manzilin.lesson;
+package ru.manzilin.lesson.Old;
 
 public class Dog extends Animal{
     @Override

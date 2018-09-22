@@ -1,6 +1,4 @@
-package ru.manzilin.lesson;
-
-import java.io.*;
+package ru.manzilin.lesson.Old;
 
 public class one {
     public static void main(String[] args) {

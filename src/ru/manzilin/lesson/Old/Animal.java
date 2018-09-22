@@ -1,4 +1,4 @@
-package ru.manzilin.lesson;
+package ru.manzilin.lesson.Old;
 
 public abstract class Animal {
     protected String name;

@@ -1,4 +1,4 @@
-package ru.manzilin.lesson.Zoopark;
+package ru.manzilin.lesson.Old.Zoopark;
 
 public class Guard {
     private String login;

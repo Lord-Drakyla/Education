@@ -1,6 +1,6 @@
-package ru.manzilin.lesson.Zoopark;
+package ru.manzilin.lesson.Old.Zoopark;
 
-import ru.manzilin.lesson.Animal;
+import ru.manzilin.lesson.Old.Animal;
 
 import java.io.Serializable;
 
