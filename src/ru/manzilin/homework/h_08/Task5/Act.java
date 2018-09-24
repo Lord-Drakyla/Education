@@ -1,4 +1,7 @@
-package ru.manzilin.homework.h_08.Task5
+package ru.manzilin.homework.h_08.Task5;
+
+import java.time.LocalDate;
+import java.util.Arrays;
 
 public class Act {
 
@@ -14,6 +17,12 @@ public class Act {
   this.listOfGoods=listOfGoods;
   this.date=date;
 	}
-	
-	
+
+    public String toPrint() {
+        StringBuffer sb = new StringBuffer();
+        sb.append("\n   number: "          + this.number);
+        sb.append("\n   List: "           + Arrays.toString(this.listOfGoods));
+        sb.append("\n   date: "             + this.date);
+        return sb.toString();
+    }
 }
