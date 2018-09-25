@@ -1,16 +1,26 @@
 package ru.manzilin.homework.h_08.Task2;
 
 public class Main {
+
     public static void main(String[] args) {
-        Man one = new Man("Василий");
-        Man two = new Man("Василий");
-        Man three = new Man("Василий");
-        Man four = new Man("Василий");
-        Man five = new Man("Василий");
-        System.out.println(Man.getCount());
-        System.out.println(one.getCount());
-        System.out.println(two.getCount());
-        System.out.println(three.getCount());
-        // И даже если поменять имена экземляров счетчик будет одинаков.
+        System.out.println(Final.PI);
+        System.out.println(Final.PLUSPI(15));
+        Final finalClass = new Final();
+        System.out.println(finalClass.PI);
+        System.out.println(finalClass.PLUSPI(15));
+
+    }
+    private static class twoFinal extends Final{
+        /**
+         * не получается переопределить метод исходного класса
+          * @param x - просто число
+         * @return сложение с полем PI
+         *
+         * public static final double PLUSPI(double x){
+         *             return x+PI+1;
+         *         }
+         */
+
+
     }
 }

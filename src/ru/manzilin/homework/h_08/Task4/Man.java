@@ -1,4 +1,4 @@
-package ru.manzilin.homework.h_08.Task2;
+package ru.manzilin.homework.h_08.Task4;
 
 public class Man {
     private static int count;
