@@ -31,7 +31,7 @@ public class VendingMachine {
     public double addMoney(double money) {
         // TODO: имитировать замятие купюры
         // TODO: сумму замятых купюр сохранить в исключении
-        // TODO: ошибка должна обрабатываться на уровне пользователя (в классе Main)
+        // TODO: ошибка должна обрабатываться на уровне пользователя (в классе ProblemApp)
         this.money += money;
         return this.money;
     }

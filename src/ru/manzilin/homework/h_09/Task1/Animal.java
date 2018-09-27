@@ -1,6 +1,6 @@
 package ru.manzilin.homework.h_09.Task1;
 
-abstract class Animal {
+public abstract class Animal {
     int distance;
     int speed;
     int direction;
