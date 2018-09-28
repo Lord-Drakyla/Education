@@ -13,12 +13,11 @@ public class FileUserRun {
 
     public void Run() throws IOException {
         fileUser.doGetPath();
-        fileUser= fileUser.doCopy("Copy.txt");
+        fileUser = fileUser.doCopy("Copy.txt");
         fileUser.doGetPath();
-        fileUser=fileUser.doRename("NewName.txt");
+        fileUser = fileUser.doRename("NewName.txt");
         fileUser.doGetPath();
     }
-
 
 
 }
