@@ -1,46 +1,26 @@
 package ru.manzilin.homework.h_08.Task3;
 
 public class Calculator {
-	private static double oneNumber;
-	private static double twoNumber;
-	private static double Result;
-	Calculator(){
-	
+	private Calculator(){ }
+
+	public static float addition (float oneNumber, float twoNumber){
+	return oneNumber + twoNumber;
 	}
 	
-	Calculator(double oneNumber, double twoNumber){
-	this.oneNumber = oneNumber;
-	this.twoNumber = twoNumber;
-	}
-	public void setNumber (double oneNumber, double twoNumber){
-	this.oneNumber = oneNumber;
-	this.twoNumber = twoNumber;
-	}
-	public int getIntResult (){
-	    
-	return (int) Result;
-	}
-	public double getDoubleResult (){
-	return Result;
-	}
-	public static void addition (){
-	Result = oneNumber + twoNumber;
+	public static float subtraction (float oneNumber, float twoNumber){
+	return oneNumber - twoNumber;
 	}
 	
-	public static void subtraction (){
-	Result = oneNumber - twoNumber;
+	public static float multiplication (float oneNumber, float twoNumber){
+	return oneNumber * twoNumber;
 	}
 	
-	public static void multiplication (){
-	Result = oneNumber * twoNumber;
+	public static float division (float oneNumber, float twoNumber){
+	return oneNumber / twoNumber;
 	}
 	
-	public static void division (){
-	Result = oneNumber / twoNumber;
-	}
-	
-    public static void percentOfNum (){
-	Result = oneNumber * twoNumber / 100;
+    public static float percentOfNum (float oneNumber, float twoNumber){
+	return  oneNumber * twoNumber / 100;
 	}
 	
 	
