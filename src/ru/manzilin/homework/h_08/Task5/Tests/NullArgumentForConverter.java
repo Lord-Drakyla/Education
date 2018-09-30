@@ -16,24 +16,11 @@ import java.time.LocalDate;
 
 class NullArgumentForConverter {
     public static void main(String[] args) {
-//        Contract contract = new Contract(
-//                220,
-//                new String[]{"1", "2"},
-//                LocalDate.of(2018, 9, 21));
-//        Act newAct = Converter.convertContractToAct(null);
-        File file = new File("task");
-        try (FileInputStream is = new FileInputStream(file)){
-            int a = 0;
-            while ((a=is.read())!=-1){
-                System.out.print((char) a);
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
+        Contract contract = new Contract(
+                220,
+                new String[]{"1", "2"},
+                LocalDate.of(2018, 9, 21));
+        Act newAct = Converter.convertContractToAct(null);
     }
 
 }
