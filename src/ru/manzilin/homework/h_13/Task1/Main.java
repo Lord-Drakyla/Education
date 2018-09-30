@@ -52,30 +52,28 @@ public class Main {
     /**
      * обработка добавления денег в автомат
      * @param money - сумма
+     * @Exception   DONE: добавить обработку исключительной ситуации - замятия
      */
     private static void processAddMoney(int money)  {
-        // TODO: добавить обработку исключительной ситуации - замятия
         double localMoney=0;
         try{
             System.out.println("Текущий баланс: " + vm.addMoney(money));
 
-        }catch (ru.manzilin.homework.h_14.Task1.Exceptions.MoneyEatingException e){
+        }catch (MoneyEatingException e){
             localMoney=  vm.getBalance() -  e.getSumEatMoney();
             e.getMessage();
+            log1.error("Количество замятых денег - {}", localMoney, e);
+            System.out.println("Возвращаем вам ваши замятые деньги: " + localMoney);
 
-
-
-        } finally {
-            System.out.println("Возвращаем вам ваши деньги: " + localMoney);
         }
     }
 
     /**
      * обработка получения напитка
      * @param key - код напитка в автомате
+     * @Exception   DONE: обработать все возможные исключения
      */
     private static void processGetDrink(int key) {
-        // TODO: обработать все возможные исключения
         try{
             DrinkType drinkType = vm.giveMeADrink(key);
             if (drinkType != null) {
@@ -86,19 +84,9 @@ public class Main {
         }catch (MoneyNotEnoughExceprion e){
             e.getMessage();
             log1.error("Проблемы с деньгами", e);
-
         }catch (GoodsExceprion e){
             e.getMessage();
             log1.error("Проблемы с товаром", e);
-
-        }catch (MoneyEatingException e){
-            double localMoney =  vm.getBalance() -  e.getSumEatMoney();
-            e.getMessage();
-            log1.error("Количество замятых денег - {}", localMoney, e);
-            System.out.println("Возвращаем вам ваши деньги: " + localMoney);
-        } catch (VenMachineExceprion e) {
-            e.getMessage();
-            log1.error("Проблемы с работой автомата", e);
         } finally {
             processEnd();
         }

@@ -22,9 +22,9 @@ public class Product {
      * Меняет количество товара в хранлище
      *
      * @return тип напитка
+     * @Exception  DONE: сделать проверку что товар не кончился
      */
     public DrinkType take() {
-        // TODO: сделать проверку что товар не кончился
         quantity--;
         if (quantity<0) {
             throw new GoodsExceprion("Товар кончился. Требуется сервисное обслуживание. Извините");

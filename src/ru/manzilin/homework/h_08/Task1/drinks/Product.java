@@ -1,5 +1,7 @@
 package ru.manzilin.homework.h_08.Task1.drinks;
 
+import ru.manzilin.homework.h_13.Task1.Exceptions.GoodsExceprion;
+
 /**
  * Класс-обертка "Информация по товару"
  *
@@ -19,10 +21,13 @@ public class Product {
      * Меняет количество товара в хранлище
      *
      * @return тип напитка
+     *
+     * @Exception  DONE: сделать проверку что товар не кончился
      */
-    public DrinkType take() {
-        // TODO: сделать проверку что товар не кончился
+    public DrinkType take() throws GoodsExceprion {
+        //
         quantity--;
+        if ((quantity < 0)) throw new GoodsExceprion("При взятии товара обнаружилось, что его нет. Нужно пополнить");
         return drinkType;
     }
 

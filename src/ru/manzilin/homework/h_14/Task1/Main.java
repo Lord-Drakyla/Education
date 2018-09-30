@@ -54,9 +54,9 @@ public class Main {
     /**
      * обработка добавления денег в автомат
      * @param money - сумма
+     * @Exception   DONE: добавить обработку исключительной ситуации - замятия
      */
     private static void processAddMoney(int money)  throws MoneyEatingException {
-        // TODO: добавить обработку исключительной ситуации - замятия
             System.out.println("Текущий баланс: " + vm.addMoney(money));
             LOG.debug("-- processAddMoney() > получил параметр: {}", money);
             LOG.info("Количество денег - {}", money);
@@ -66,9 +66,9 @@ public class Main {
     /**
      * обработка получения напитка
      * @param key - код напитка в автомате
+     * @Exception   DONE: обработать все возможные исключения
      */
     private static void processGetDrink(int key) {
-        // TODO: обработать все возможные исключения
         try{
             DrinkType drinkType = vm.giveMeADrink(key);
             if (drinkType != null) {

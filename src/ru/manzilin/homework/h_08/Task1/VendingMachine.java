@@ -5,6 +5,7 @@ import ru.manzilin.homework.h_08.Task1.drinks.ColdDrinkType;
 import ru.manzilin.homework.h_08.Task1.drinks.DrinkType;
 import ru.manzilin.homework.h_08.Task1.drinks.HotDrinkType;
 import ru.manzilin.homework.h_08.Task1.drinks.Product;
+import ru.manzilin.homework.h_13.Task1.Exceptions.GoodsExceprion;
 
 /**
  * Торговый автомат
@@ -27,11 +28,13 @@ public class VendingMachine {
      *
      * @param money - сумма внесенных купюр
      * @return текущий остаток
+     * DONE: имитировать замятие купюры
+     * DONE: сумму замятых купюр сохранить в исключении
+     * DONE: ошибка должна обрабатываться на уровне пользователя (в классе ProblemApp)
+     *
+     * В h_13.Task1
      */
     public double addMoney(double money) {
-        // TODO: имитировать замятие купюры
-        // TODO: сумму замятых купюр сохранить в исключении
-        // TODO: ошибка должна обрабатываться на уровне пользователя (в классе ProblemApp)
         this.money += money;
         return this.money;
     }
@@ -44,18 +47,19 @@ public class VendingMachine {
      *
      * @param key код продукта
      * @return напиток;
+     * DONE: возвращать соответствующую ошибку
+     * Неправильный код товара - товар не возвращается
+     * DONE: возвращать соответствующую ошибку
+     * Нехватает денег - товар не возвращается
+     * В h_13.Task1
      */
-    public DrinkType giveMeADrink(int key){
+    public DrinkType giveMeADrink(int key) throws GoodsExceprion {
         if (!isKeyValid(key)) {
-            // TODO: возвращать соответствующую ошибку
-            // Неправильный код товара - товар не возвращается
             return null;
         }
 
         Product selected = drinks[key];
         if (!isMoneyEnough(selected)) {
-            // TODO: возвращать соответствующую ошибку
-            // Нехватает денег - товар не возвращается
             return null;
         }
 

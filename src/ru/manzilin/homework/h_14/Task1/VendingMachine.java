@@ -28,10 +28,13 @@ public class VendingMachine {
      *
      * @param money - сумма внесенных купюр
      * @return текущий остаток
+     * DONE: имитировать замятие купюры
+     * DONE: сумму замятых купюр сохранить в исключении
+     * DONE: ошибка должна обрабатываться на уровне пользователя (в классе ProblemApp)
+     * DONE: Добавлено логгирование
      */
     public double addMoney(double money) {
         LOG.debug("-- addMoney() > получил параметр: {}", money);
-        // TODO: имитировать замятие купюры
         double situation = Math.random();
         double amount = Math.random() * money;
         LOG.debug(">> addMoney() Количество замятых купюр {}, вероятность на данный момент{}", amount, situation);
@@ -39,8 +42,6 @@ public class VendingMachine {
             throw new MoneyEatingException("При вводе купюр случилось замятие. Необходимо получить обратно." +
                     "\n Попробуйте ещё раз.", amount);
         }
-        // TODO: сумму замятых купюр сохранить в исключении
-        // TODO: ошибка должна обрабатываться на уровне пользователя (в классе ProblemApp)
         this.money += money;
         return this.money;
     }
@@ -53,20 +54,20 @@ public class VendingMachine {
      *
      * @param key код продукта
      * @return напиток;
+     * DONE: возвращать соответствующую ошибку
+     * Неправильный код товара - товар не возвращается
+     * DONE: возвращать соответствующую ошибку
+     * Нехватает денег - товар не возвращается
      */
     public DrinkType giveMeADrink(int key){
         LOG.trace(">> giveMeADrink()");
         if (!isKeyValid(key)) {
-            // TODO: возвращать соответствующую ошибку
-            // Неправильный код товара - товар не возвращается
             throw new GoodsExceprion(key+" - товар с таким кодом отсутствует. Невозможно выдать товар." +
                     "\n Попробуйте еще раз");
         }
 
         Product selected = drinks[key];
         if (!isMoneyEnough(selected)) {
-            // TODO: возвращать соответствующую ошибку
-            // Нехватает денег - товар не возвращается
             throw new MoneyNotEnoughExceprion(this.money+" - такой суммы недостаточно. Внесите больше денег" +
                     "\n Попробуйте ещё раз");
         }

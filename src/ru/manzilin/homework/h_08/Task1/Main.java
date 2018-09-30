@@ -2,13 +2,14 @@ package ru.manzilin.homework.h_08.Task1;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.manzilin.homework.h_08.Task1.drinks.DrinkType;
+import ru.manzilin.homework.h_13.Task1.Exceptions.GoodsExceprion;
 
 import java.util.Scanner;
 
 public class Main {
     private static VendingMachine vm = new VendingMachine();
     private static final Logger log = LoggerFactory.getLogger(Main.class);
-    public static void main(String[] args) {
+    public static void main(String[] args) throws GoodsExceprion {
         log.info("Сообщение 1");
         System.out.println("Наши напитки: ");
         for (String line : vm.getDrinkTypes()) {
@@ -44,18 +45,21 @@ public class Main {
     /**
      * обработка добавления денег в автомат
      * @param money - сумма
+     * @Exception DONE: добавить обработку исключительной ситуации - замятия
+     *              В h_13.Task1
      */
     private static void processAddMoney(int money) {
-        // TODO: добавить обработку исключительной ситуации - замятия
+
         System.out.println("Текущий баланс: " + vm.addMoney(money));
     }
 
     /**
      * обработка получения напитка
      * @param key - код напитка в автомате
+     * @Exception DONE: обработать все возможные исключения
+     *      *              В h_13.Task1
      */
-    private static void processGetDrink(int key) {
-        // TODO: обработать все возможные исключения
+    private static void processGetDrink(int key) throws GoodsExceprion {
         DrinkType drinkType = vm.giveMeADrink(key);
         if (drinkType != null) {
             System.out.println("Ммм! " + drinkType.getName() + "!");
