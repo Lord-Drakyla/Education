@@ -12,7 +12,7 @@ import ru.manzilin.homework.h_08.Task5.Converter;
  *
  */
 
-class MissingfieldsForClassesToConverter {
+class MissingFieldsForClassesToConverter {
     static int number;
 
     public static void main(String[] args) {
