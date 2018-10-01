@@ -10,10 +10,10 @@ public class CopyApp {
     private final File file2;
     private final Charset charsetSource;
     private final Charset charsettarget;
-
-    public CopyApp(File file1, File file2, Charset charsetSource, Charset charsettarget) {
-        this.file1 = file1;
-        this.file2 = file2;
+    //TODO: определение кодировки.
+    public CopyApp(File source, File target, Charset charsetSource, Charset charsettarget) {
+        this.file1 = source;
+        this.file2 = target;
         this.charsetSource = charsetSource;
         this.charsettarget = charsettarget;
     }
@@ -28,8 +28,8 @@ public class CopyApp {
     }
     public static void main(String[] args) {
         CopyApp copyApp = new CopyApp(
-                new File("Task1_target.txt"),
                 new File("Task1_source.txt"),
+                new File("Task1_target.txt"),
                 StandardCharsets.US_ASCII,
                 StandardCharsets.UTF_8);
         copyApp.run();
