@@ -56,14 +56,20 @@ public abstract class Book implements Serializable {
 
     /**
      * @return a String representation of this object on multiple lines
-     *         (primarily to be used for debugging and logging)
+     * (primarily to be used for debugging and logging)
      */
     public String toPrint() {
-        StringBuffer sb = new StringBuffer();
-        sb.append("\n   author: "          + this.author);
-        sb.append("\n   title: "           + this.title);
-        sb.append("\n   ISBN: "             + this.ISBN);
-        sb.append("\n   yearPublication: "  + this.yearPublication);
+//        StringBuffer sb = new StringBuffer();
+//        sb.append("\n   author: "          + this.author);
+//        sb.append("\n   title: "           + this.title);
+//        sb.append("\n   ISBN: "             + this.ISBN);
+//        sb.append("\n   yearPublication: "  + this.yearPublication);
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n   author: ").append(this.author);
+        sb.append("\n   title: ").append(this.title);
+        sb.append("\n   ISBN: ").append(this.ISBN);
+        sb.append("\n   yearPublication: ").append(this.yearPublication);
         return sb.toString();
     }
 
