@@ -1,5 +1,5 @@
 package manzilin.homework.h_20;
-
+// todo рефакторинг требуется
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
