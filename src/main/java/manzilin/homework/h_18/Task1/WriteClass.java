@@ -19,7 +19,7 @@ public class WriteClass {
 
     }
 
-    void  doWriteFile(File targetFile){
+    public void  doWriteFile(File targetFile){
         try(OutputStream os = new FileOutputStream(targetFile)){
             os.write(this.content.getBytes(this.charset));
         } catch (

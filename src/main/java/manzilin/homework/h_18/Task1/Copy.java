@@ -5,20 +5,23 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 
-public class CopyApp {
+public class Copy {
     private final File file1;
     private final File file2;
     private final Charset charsetSource;
     private final Charset charsettarget;
+
     //TODO: определение кодировки.
-    public CopyApp(File source, File target, Charset charsetSource, Charset charsettarget) {
+    public Copy(File source, File target, Charset charsetSource, Charset charsettarget) {
         this.file1 = source;
         this.file2 = target;
         this.charsetSource = charsetSource;
         this.charsettarget = charsettarget;
     }
 
-    private void run(){
+
+
+    public void run(){
         new WriteClass(
                 new ReadClass(charsetSource)
                         .doReadFile(file1),
@@ -26,15 +29,7 @@ public class CopyApp {
         ).doWriteFile(file2);
 
     }
-    public static void main(String[] args) {
-        CopyApp copyApp = new CopyApp(
-                new File("Task1_source.txt"),
-                new File("Task1_target.txt"),
-                StandardCharsets.US_ASCII,
-                StandardCharsets.UTF_8);
-        copyApp.run();
 
-    }
 
 
 }
