@@ -1,16 +1,18 @@
 package manzilin.homework.h_23;
 
-
 import java.util.ArrayList;
-
 import java.util.List;
 
-public class ShopBasket implements Basket {
-    private final List<String> products = new ArrayList<String>();
-    private final List<Integer> quantities = new ArrayList<Integer>();
+/**
+ *
+ */
+public class ShopBasket implements Basket, Validateable {
+    private final List<String> products = new ArrayList<>();
+    private final List<Integer> quantities = new ArrayList<>();
 
     @Override
     public void addProduct(String product, int quantity) {
+        ValideData(product,quantity);
         products.add(product);
         quantities.add(quantity);
     }
@@ -22,8 +24,14 @@ public class ShopBasket implements Basket {
         quantities.remove(index);
     }
 
+    /**
+     * Поменяет только у первого найденного
+     * @param product - товара
+     * @param quantity - его количество
+     */
     @Override
     public void updateProductQuantity(String product, int quantity) {
+        ValideData(product,quantity);
         int index = products.indexOf(product);
         quantities.set(index, quantity);
     }
@@ -54,7 +62,6 @@ public class ShopBasket implements Basket {
             sb.append("\t   quantity: ").append(quantities.get(i));
         }
         return sb.toString();
-
 
     }
 }
