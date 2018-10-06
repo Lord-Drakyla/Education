@@ -5,10 +5,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * Вопрос о динамимеском изменении arrayList продемострирован с помощью побитового сдвига.
- */
-public class App {
+
+public class originalApp {
     public static void main(String[] args) {
 
         List<PersonSimple> peopleSimple = new ArrayList<>();
