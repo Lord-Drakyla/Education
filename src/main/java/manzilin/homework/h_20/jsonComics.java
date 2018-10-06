@@ -3,7 +3,7 @@ package manzilin.homework.h_20;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class XKCD {
+public class jsonComics {
 
 //    private String link;
 //
@@ -21,22 +21,20 @@ public class XKCD {
     private String safe_title;
     private String num;
 
-    private XKCD() {
+    private jsonComics() {
     }
 
-//    public XKCD(String month, String year, String safe_title) {
+//    public jsonComics(String month, String year, String safe_title) {
 //        this.month = month;
 //        this.year = year;
 //        this.safe_title = safe_title;
 //    }
 
-
-
     public String toPrint() {
         StringBuffer sb = new StringBuffer();
-        sb.append("\n   year: " + this.year);
-        sb.append("\n   safe_title: " + this.safe_title);
-        sb.append("\n   month: " + this.month);
+        sb.append("\n year: ").append(this.year);
+        sb.append("\n safe_title: ").append(this.safe_title);
+        sb.append("\n month: ").append(this.month);
         return sb.toString();
     }
 
