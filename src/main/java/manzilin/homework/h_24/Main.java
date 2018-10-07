@@ -1,39 +1,39 @@
 package manzilin.homework.h_24;
 
+import com.sun.istack.internal.NotNull;
+
 import java.util.Arrays;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Main {
-    private static String[] test = new String[]{"foo", "buzz", "bar", "fork", "bort", "spoon", "!", "dude"};
+    private static String[] test = new String[]{"foo", "buzz", "bar", "fork", "bort", "spoon", "!", "dude",null};
 
+    /**
+     * Можно было добавить иным образом
+     * for (String s : test
+     *         ) {
+     *             if (s != null) set.add(s);
+     *         }
+     *
+     */
     public static void main(String[] args) {
-        Set<String> set = new HashSet<>();
-
-        for (String s : test
-        ) {
-            if (s != null) set.add(s);
-        }
-
+        Set<String> set = new LinkedHashSet<>(Arrays.asList(test));
         System.out.println(set);
         set = removeEvenLength(set);
         System.out.println(set);
-
 
     }
 
     /**
      * Удаляет из Множества все четные элементы.
-     * <p>
-     * Можно было добавить иным образом
-     * Set<String> newSet = new HashSet<>();
-     * newSet.addAll(set);
      *
      * @param set - Множество изначальное
      * @return - исправленное множество.
      */
-    public static Set<String> removeEvenLength(Set<String> set) {
-        Set<String> newSet = new HashSet<String>(Arrays.asList(test));
+    public static Set<String> removeEvenLength(@NotNull Set<String> set) {
+        Set<String> newSet = new LinkedHashSet<>();
+        newSet.addAll(set);
         for (String s : set) {
             if (s.length() % 2 == 0) newSet.remove(s);
         }
