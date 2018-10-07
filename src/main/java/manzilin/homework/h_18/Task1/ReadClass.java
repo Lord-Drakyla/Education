@@ -16,7 +16,7 @@ public class ReadClass {
 
     }
 
-    String doReadFile(File file) {
+    public String doReadFile(File file) {
         try (InputStream is = new FileInputStream(file)) {
             int b;
             byte[] buffer = new byte[1000];
