@@ -1,26 +1,26 @@
 package manzilin.homework.h_21;
 
-
-
-
 public class Array {
 
-    private static int[][] array = new int[10][10];
+    private int[][] array = new int[10][10];
+
+    public Array() {
+        fillRandom(this.array);
+    }
 
     public static void main(String[] args) {
-        Task1 task1 = new Task1();
-        Task2 task2 = new Task2();
-        fillTestArray();
-        toPrint();
-        System.out.println("\t");
-        Task1.toLeft();
-        toPrint();
-        System.out.println("\t");
-        Task2.reversTestArray();
-        toPrint();
-
+        Array array = new Array();
+        array.toPrint("Просто массив рандомных чисел");
+        array.toLeft();
+        array.toPrint("Задание 1");
+        array.reverse();
+        array.toPrint("Задание 2");
+        array.reverseAnother();
+        array.toPrint("Другой способ");
     }
-    private static void toPrint() {
+
+    void toPrint(String phrase) {
+        System.out.println("\t"+phrase);
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 System.out.printf("%d\t", array[i][j]);
@@ -28,7 +28,8 @@ public class Array {
             System.out.println();
         }
     }
-    private static void fillTestArray() {
+
+    void fillRandom(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 array[i][j] = (int) (Math.random() * 20 + 1);
@@ -36,36 +37,66 @@ public class Array {
         }
     }
 
-    static class Task1 {
-        static void toLeft() {
-
+    /**
+     * Задание № 1
+     * Сдвиг массива
+     */
+    void toLeft() {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length - 1; j++) {
                 array[i][j] = array[i][j + 1];
             }
             array[i][array[i].length - 1] = 0;
         }
-
-    }
     }
 
-
-    static class Task2 {
-        static void reversTestArray() {
-        int forward = 0;
-        int backwards = array.length - 1;
+    /**
+     * Задание № 2
+     * вариант экзотический
+     */
+    void reverse() {
+        int forward;
+        int backwards;
         int temp = 0;
         for (int i = 0; i < array.length; i++) {
-            while (forward< array.length / 2) {
+            forward = 0;
+            backwards = array.length - 1;
+            while (forward < array[0].length / 2) {
                 temp = array[i][forward];
                 array[i][forward] = array[i][backwards];
                 array[i][backwards] = temp;
                 forward++;
                 backwards--;
             }
-            forward = 0;
-            backwards = array.length - 1;
         }
     }
+
+    /**
+     * Задание № 2
+     * Предложение Антона.
+     */
+    void reverseAnother() {
+        int key = array.length;
+        int deepKey = array[0].length;
+        int[][] tempArr = new int[key][deepKey];
+        int i =0;
+        int j;
+        key = key - 1;
+        while (key>-1) {
+            j=0;
+            deepKey=array[0].length-1;
+            while (deepKey>-1) {
+                tempArr[i][j] = array[key][deepKey];
+                deepKey--;
+                j++;
+            }
+            i++;
+            key--;
+        }
+        for (int k = 0; k < array.length; k++) {
+            System.arraycopy(tempArr[k],0,array[k],0,array[k].length);
+        }
+
     }
+
 }
