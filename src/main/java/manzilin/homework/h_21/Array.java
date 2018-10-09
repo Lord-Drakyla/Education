@@ -20,7 +20,7 @@ public class Array {
     }
 
     void toPrint(String phrase) {
-        System.out.println("\t"+phrase);
+        System.out.println("\t" + phrase);
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 System.out.printf("%d\t", array[i][j]);
@@ -60,8 +60,8 @@ public class Array {
         int temp = 0;
         for (int i = 0; i < array.length; i++) {
             forward = 0;
-            backwards = array.length - 1;
-            while (forward < array[0].length / 2) {
+            backwards = array[i].length - 1;
+            while (forward < array[i].length / 2) {
                 temp = array[i][forward];
                 array[i][forward] = array[i][backwards];
                 array[i][backwards] = temp;
@@ -79,13 +79,13 @@ public class Array {
         int key = array.length;
         int deepKey = array[0].length;
         int[][] tempArr = new int[key][deepKey];
-        int i =0;
+        int i = 0;
         int j;
         key = key - 1;
-        while (key>-1) {
-            j=0;
-            deepKey=array[0].length-1;
-            while (deepKey>-1) {
+        while (key > -1) {
+            j = 0;
+            deepKey = array[key].length - 1;
+            while (deepKey > -1) {
                 tempArr[i][j] = array[key][deepKey];
                 deepKey--;
                 j++;
@@ -94,7 +94,7 @@ public class Array {
             key--;
         }
         for (int k = 0; k < array.length; k++) {
-            System.arraycopy(tempArr[k],0,array[k],0,array[k].length);
+            System.arraycopy(tempArr[k], 0, array[k], 0, array[k].length);
         }
 
     }
