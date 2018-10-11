@@ -2,9 +2,7 @@ package manzilin.homework.h_24;
 
 import com.sun.istack.internal.NotNull;
 
-import java.util.Arrays;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     private static String[] test = new String[]{"foo", "buzz", "bar", "fork", "bort", "spoon", "!", "dude", null};
@@ -21,7 +19,10 @@ public class Main {
         System.out.println(set);
         set = removeEvenLength(set);
         System.out.println(set);
-
+        set = new LinkedHashSet<>(Arrays.asList(test));
+        System.out.println(set);
+        set = removeEvenLengthAnother(set);
+        System.out.println(set);
     }
 
     /**
@@ -39,5 +40,21 @@ public class Main {
         }
 
         return newSet;
+    }
+    /**
+     * Удаляет из Множества все четные элементы ,используя итератор.
+     *
+     * @param set - Множество изначальное
+     * @return - исправленное множество.
+     */
+    public static Set<String> removeEvenLengthAnother(@NotNull Set<String> set) {
+        set.remove(null);
+        Iterator iter = set.iterator();
+        while (iter.hasNext()){
+            String s = (String) iter.next();
+            if (s.length() % 2 == 0) iter.remove();
+        }
+
+        return set;
     }
 }
