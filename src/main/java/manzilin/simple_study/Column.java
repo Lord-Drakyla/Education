@@ -1,4 +1,4 @@
-package manzilin.lesson.simple_study;
+package manzilin.simple_study;
 
 import java.util.HashMap;
 
