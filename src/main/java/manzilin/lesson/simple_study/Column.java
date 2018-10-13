@@ -7,13 +7,13 @@ public class Column {
     String KEY;
     String[] base1;
     String[] base2;
-    static HashMap Mass = new HashMap();
+    static HashMap<String, Object> Mass = new HashMap<>();;
     HashMap Optimum;
 
     static {
         int nk; // = tonumber(tbl.potok[9])
         int vk; // = tonumber(tbl.potok[10])
-        HashMap<String, Object> Mass = new HashMap<>();
+
         Mass.put("g", 9.80665);
         Float[] floats = {0.0f, 0.0f};
         Mass.put("Vm", floats);
