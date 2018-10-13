@@ -35,8 +35,8 @@ public class Main {
      * Set<String> set = new HashSet<>()
      * set.addAll(map.values());
      *
-     * @param map
-     * @return
+     * @param map - проверяемая на уникальность [карта]
+     * @return -
      */
     static public boolean isUniqueSimple(Map<String, String> map) {
         Set<String> set = new HashSet<>(map.values());
