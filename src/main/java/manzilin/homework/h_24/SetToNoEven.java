@@ -2,29 +2,19 @@ package manzilin.homework.h_24;
 
 import com.sun.istack.internal.NotNull;
 
-import java.util.*;
-
-public class Main {
-    private static String[] test = new String[]{"foo", "buzz", "bar", "fork", "bort", "spoon", "!", "dude", null};
-
-    /**
-     * Можно было добавить иным образом
-     * for (String s : test
-     * ) {
-     * if (s != null) set.add(s);
-     * }
-     */
-    public static void main(String[] args) {
-        Set<String> set = new LinkedHashSet<>(Arrays.asList(test));
-        System.out.println(set);
-        set = removeEvenLength(set);
-        System.out.println(set);
-        set = new LinkedHashSet<>(Arrays.asList(test));
-        System.out.println(set);
-        set = removeEvenLengthAnother(set);
-        System.out.println(set);
-    }
-
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
+/**
+ * Можно было добавить иным образом
+ * for (String s : test
+ * ) {
+ * if (s != null) set.add(s);
+ * }
+ *
+ *
+ */
+public class SetToNoEven {
     /**
      * Удаляет из Множества все четные элементы.
      *
