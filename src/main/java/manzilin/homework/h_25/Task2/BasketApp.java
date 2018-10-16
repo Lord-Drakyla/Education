@@ -16,10 +16,6 @@ public class BasketApp {
         for (int i = 0; i <testDataQunt.length ; i++) {
             basketOfAmason.addProduct(testDataProduct[i],testDataQunt[i]);
         }
-        for (int i = 0; i <testDataQunt.length ; i++) {
-            basketOfAmason.addProduct(testDataProduct[i],testDataQunt[i]);
-        }
-
         for (String product :
                 basketOfAmason.getProducts()) {
             System.out.println(product);
