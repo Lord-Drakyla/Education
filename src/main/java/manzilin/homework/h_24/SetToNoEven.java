@@ -2,9 +2,8 @@ package manzilin.homework.h_24;
 
 import com.sun.istack.internal.NotNull;
 
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
+
 /**
  * Можно было добавить иным образом
  * for (String s : test
