@@ -8,22 +8,30 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
     private final String EXPECTEDNAME = "Мафусаил";
-    private final int EXPECTEDRESULT = 0;
-
     Person person = new Person("Мафусаил", 9999);
+    Person upperperson = new Person("Лафусаил", 9999);
+    Person lowerperson = new Person("Нафусаил", 9999);
     @BeforeEach
     void setUp() {
       assertNotNull(person);
     }
 
     @Test
-    void getName() {
+    void nameOfPerson() {
         assertEquals(EXPECTEDNAME, person.getName(), "Имя библейского долгожителя");
     }
 
     @Test
-    void compareTo() {
-        assertEquals(EXPECTEDRESULT, person.compareTo(person));
+    void SamePerson() {
+        assertEquals(0, person.compareTo(person));
+    }
+    @Test
+    void NextPerson() {
+        assertEquals(1, person.compareTo(upperperson));
+    }
+    @Test
+    void PreviousPerson() {
+        assertEquals(-1, person.compareTo(lowerperson));
     }
 
 }
