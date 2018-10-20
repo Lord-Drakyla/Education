@@ -2,12 +2,12 @@ package manzilin.homework.h_08.Task4;
 
 public class Main {
     public static void main(String[] args) {
-        Man one = new Man("Василий");
-        Man two = new Man("Василий");
-        Man three = new Man("Василий");
-        Man four = new Man("Василий");
-        Man five = new Man("Василий");
-        System.out.println(Man.getCount());
+        countMan one = new countMan("Василий");
+        countMan two = new countMan("Василий");
+        countMan three = new countMan("Василий");
+        countMan four = new countMan("Василий");
+        countMan five = new countMan("Василий");
+        System.out.println(countMan.getCount());
         System.out.println(one.getCount());
         System.out.println(two.getCount());
         System.out.println(three.getCount());

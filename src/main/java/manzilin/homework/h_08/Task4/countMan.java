@@ -1,10 +1,10 @@
 package manzilin.homework.h_08.Task4;
 
-public class Man {
+public class countMan {
     private static int count;
     private String name;
 
-    public Man(String name) {
+    public countMan(String name) {
         this.name = name;
         count++;
     }
