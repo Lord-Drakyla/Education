@@ -2,20 +2,15 @@ package manzilin.homework.h_09.Task3;
 
 import java.time.LocalDate;
 
-public class Man extends Homo {
+public class Woman extends Homo {
     int distance;
-    public Man(String name) {
-        super(name);
-    }
-    public Man(String name, LocalDate birthDay) {
+
+    public Woman(String name, LocalDate birthDay) {
         super(name, birthDay);
     }
 
-    public Man() {
-        this.distance = distance;
-    }
-    public Man(int distance) {
-        this.distance = distance;
+    public Woman(String name) {
+        super(name);
     }
 
     @Override
@@ -36,3 +31,4 @@ public class Man extends Homo {
 
     }
 }
+
