@@ -1,6 +1,5 @@
 package manzilin.homework.h_22;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,9 +10,10 @@ class PersonTest {
     Person person = new Person("Мафусаил", 9999);
     Person upperperson = new Person("Лафусаил", 9999);
     Person lowerperson = new Person("Нафусаил", 9999);
+
     @BeforeEach
     void setUp() {
-      assertNotNull(person);
+        assertNotNull(person);
     }
 
     @Test
@@ -25,10 +25,12 @@ class PersonTest {
     void SamePerson() {
         assertEquals(0, person.compareTo(person));
     }
+
     @Test
     void NextPerson() {
         assertEquals(1, person.compareTo(upperperson));
     }
+
     @Test
     void PreviousPerson() {
         assertEquals(-1, person.compareTo(lowerperson));
