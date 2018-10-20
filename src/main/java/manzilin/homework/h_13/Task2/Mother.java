@@ -1,9 +1,10 @@
 package manzilin.homework.h_13.Task2;
 
 
+import manzilin.homework.h_09.Task3.Woman;
 import manzilin.homework.h_13.Task2.Food.Food;
 
-public class Mother extends Homo {
+public class Mother extends Woman {
 
 
     public Mother(String name) {

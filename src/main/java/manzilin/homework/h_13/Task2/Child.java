@@ -2,11 +2,13 @@ package manzilin.homework.h_13.Task2;
 
 import manzilin.homework.h_13.Task2.Food.*;
 
-class Child extends Homo{
+class Child  {
     final String PROPERTY = "Воспитанный";
     private String[] foodList = {"Burger"};
+    private String name;
+
     Child(String name) {
-        super(name);
+        this.name= name;
     }
     public boolean eatUp(Food food) {
         if (food.getCheckChild() != "Годен") {
