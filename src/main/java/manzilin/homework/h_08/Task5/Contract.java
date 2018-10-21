@@ -10,7 +10,8 @@ public class Contract {
     private String[] listOfGoods;
     private LocalDate date;
 
-    public Contract() {    }
+    public Contract() {
+    }
 
     public Contract(int number, String[] listOfGoods, LocalDate date) {
         this.number = (number != 0) ? number : 000001;
@@ -41,12 +42,12 @@ public class Contract {
 
     @Override
     public boolean equals(Object obj) {
-        boolean result = true;
+        boolean result;
         if (this == obj) {
             result = true;
         } else if (!(obj instanceof Contract)) {
             result = false;
-        }else {
+        } else {
             Contract contract = (Contract) obj;
             result = number == contract.number &&
                     Arrays.equals(listOfGoods, contract.listOfGoods) &&

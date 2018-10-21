@@ -29,7 +29,7 @@ public class Act {
 
     @Override
     public boolean equals(Object obj) {
-        boolean result = true;
+        boolean result;
         if (this == obj) {
             result = true;
         } else if (!(obj instanceof Act)) {
