@@ -5,14 +5,14 @@ import manzilin.homework.h_08.Task1.drinks.ColdDrinkType;
 import manzilin.homework.h_08.Task1.drinks.DrinkType;
 import manzilin.homework.h_08.Task1.drinks.HotDrinkType;
 import manzilin.homework.h_08.Task1.drinks.Product;
-import manzilin.homework.h_13.Task1.Exceptions.GoodsExceprion;
+import manzilin.homework.h_13.Task1.Exceptions.GoodsException;
 
 /**
  * Торговый автомат
  */
 public class VendingMachine {
     private double money = 0;
-    private Product[] drinks = new Product[]{
+    private final Product[] drinks = new Product[]{
             new Product(ColdDrinkType.COCA, 10),
             new Product(ColdDrinkType.PEPSI, 10),
             new Product(ColdDrinkType.SPRITE, 1),
@@ -53,7 +53,7 @@ public class VendingMachine {
      * Нехватает денег - товар не возвращается
      * В h_13.Task1
      */
-    public DrinkType giveMeADrink(int key) throws GoodsExceprion {
+    public DrinkType giveMeADrink(int key) throws GoodsException {
         if (!isKeyValid(key)) {
             return null;
         }

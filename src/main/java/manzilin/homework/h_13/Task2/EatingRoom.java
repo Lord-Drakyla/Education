@@ -3,8 +3,8 @@ package manzilin.homework.h_13.Task2;
 import manzilin.homework.h_13.Task2.Food.*;
 
 public class EatingRoom {
-    static Child child = new Child("Сережа");
-    static Mother mother = new Mother("Катя");
+    static final Child child = new Child("Сережа");
+    static final Mother mother = new Mother("Катя");
     public static void main (String[] args) {
 
 

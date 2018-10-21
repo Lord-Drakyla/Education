@@ -5,13 +5,13 @@ import manzilin.homework.h_13.Task2.Food.*;
 class Child  {
     final String PROPERTY = "Воспитанный";
     private String[] foodList = {"Burger"};
-    private String name;
+    private final String name;
 
     Child(String name) {
         this.name= name;
     }
     public boolean eatUp(Food food) {
-        if (food.getCheckChild() != "Годен") {
+        if (!food.getCheckChild().equals("Годен")) {
                 throw new FoodNegativeException("Еда не подошла ребенку. Подбирайте лучше");
             }
         return true;

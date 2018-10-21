@@ -14,16 +14,16 @@ public class Act {
     }
 
     Act(int number, String[] listOfGoods, LocalDate date) {
-        this.number = (number != 0) ? number : 000001;
+        this.number = (number != 0) ? number : 1;
         this.listOfGoods = listOfGoods;
         this.date = (date != null) ? date : LocalDate.now();
     }
 
     public String toPrint() {
-        StringBuffer sb = new StringBuffer();
-        sb.append("\n   number: " + this.number);
-        sb.append("\n   List: " + Arrays.toString(this.listOfGoods));
-        sb.append("\n   date: " + this.date);
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n").append("number:").append(this.number);
+        sb.append("\n").append("List: ").append(Arrays.toString(this.listOfGoods));
+        sb.append("\n").append("date: ").append(this.date);
         return sb.toString();
     }
 

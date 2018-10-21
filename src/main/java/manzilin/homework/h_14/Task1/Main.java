@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 
 public class Main {
-    private static VendingMachine vm = new VendingMachine();
+    private static final VendingMachine vm = new VendingMachine();
     private static final Logger LOG = LoggerFactory.getLogger(Main.class);
     public static void main(String[] args) {
         LOG.info("Начало работы программы");
@@ -55,7 +55,7 @@ public class Main {
     /**
      * обработка добавления денег в автомат
      * @param money - сумма
-     * @Exception   DONE: добавить обработку исключительной ситуации - замятия
+     * @throws  MoneyEatingException DONE: добавить обработку исключительной ситуации - замятия
      */
     private static void processAddMoney(int money)  throws MoneyEatingException {
             System.out.println("Текущий баланс: " + vm.addMoney(money));
@@ -67,7 +67,8 @@ public class Main {
     /**
      * обработка получения напитка
      * @param key - код напитка в автомате
-     * @Exception   DONE: обработать все возможные исключения
+     * @throws MoneyNotEnoughException, GoodsException, MoneyEatingException, VenMachineException
+     * DONE: обработать все возможные исключения
      */
     private static void processGetDrink(int key) {
         try{
@@ -78,11 +79,11 @@ public class Main {
                 System.out.println("Напиток почему-то не получен...");
                 LOG.debug("Напиток почему-то не получен \n -- processAddMoney() > получил параметр: {}", key);
             }
-        }catch (MoneyNotEnoughExceprion e){
+        }catch (MoneyNotEnoughException e){
             e.getMessage();
             LOG.error("Проблемы с деньгами", e);
 
-        }catch (GoodsExceprion e){
+        }catch (GoodsException e){
             e.getMessage();
             LOG.error("Проблемы с товаром", e);
 
@@ -91,7 +92,7 @@ public class Main {
             e.returnMoney();
             LOG.error("Количество замятых денег - {}",  e.getSumEatMoney(), e);
             e.getMessage();
-        } catch (VenMachineExceprion e) {
+        } catch (VenMachineException e) {
             e.getMessage();
             LOG.error("Проблемы с работой автомата", e);
         } finally {

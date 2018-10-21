@@ -10,17 +10,17 @@ public class Main {
         System.out.println(finalClass.PLUSPI(15));
 
     }
-    private static class twoFinal extends Final{
-        /**
-         * не получается переопределить метод исходного класса
-          * @param x - просто число
-         * @return сложение с полем PI
-         *
-         * public static final double PLUSPI(double x){
-         *             return x+PI+1;
-         *         }
-         */
+
+//    private static class twoFinal extends Final {
+//        /**
+//         * не получается переопределить метод исходного класса
+//         * @param x - просто число
+//         * @return сложение с полем PI
+//         *
+//         * public static final double PLUSPI(double x){
+//         *             return x+PI+1;
+//         *         }
+//         */
 
 
-    }
 }

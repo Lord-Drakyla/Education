@@ -12,7 +12,7 @@ import manzilin.homework.h_14.Task1.drinks.*;
 public class VendingMachine {
     private static final Logger LOG = LoggerFactory.getLogger(VendingMachine.class);
     private double money = 0;
-    private Product[] drinks = new Product[]{
+    private final Product[] drinks = new Product[]{
             new Product(ColdDrinkType.COCA, 10),
             new Product(ColdDrinkType.PEPSI, 10),
             new Product(ColdDrinkType.SPRITE, 1),
@@ -62,13 +62,13 @@ public class VendingMachine {
     public DrinkType giveMeADrink(int key){
         LOG.trace(">> giveMeADrink()");
         if (!isKeyValid(key)) {
-            throw new GoodsExceprion(key+" - товар с таким кодом отсутствует. Невозможно выдать товар." +
+            throw new GoodsException(key+" - товар с таким кодом отсутствует. Невозможно выдать товар." +
                     "\n Попробуйте еще раз");
         }
 
         Product selected = drinks[key];
         if (!isMoneyEnough(selected)) {
-            throw new MoneyNotEnoughExceprion(this.money+" - такой суммы недостаточно. Внесите больше денег" +
+            throw new MoneyNotEnoughException(this.money+" - такой суммы недостаточно. Внесите больше денег" +
                     "\n Попробуйте ещё раз");
         }
 

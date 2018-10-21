@@ -1,9 +1,9 @@
 package manzilin.homework.h_13.Task1;
 
 
-import manzilin.homework.h_13.Task1.Exceptions.GoodsExceprion;
+import manzilin.homework.h_13.Task1.Exceptions.GoodsException;
 import manzilin.homework.h_13.Task1.Exceptions.MoneyEatingException;
-import manzilin.homework.h_13.Task1.Exceptions.MoneyNotEnoughExceprion;
+import manzilin.homework.h_13.Task1.Exceptions.MoneyNotEnoughException;
 import manzilin.homework.h_13.Task1.drinks.*;
 
 /**
@@ -11,7 +11,7 @@ import manzilin.homework.h_13.Task1.drinks.*;
  */
 public class VendingMachine {
     private double money = 0;
-    private Product[] drinks = new Product[]{
+    private final Product[] drinks = new Product[]{
             new Product(ColdDrinkType.COCA, 10),
             new Product(ColdDrinkType.PEPSI, 10),
             new Product(ColdDrinkType.SPRITE, 1),
@@ -56,16 +56,16 @@ public class VendingMachine {
      * DONE: возвращать соответствующую ошибку
      * Нехватает денег - товар не возвращается
      */
-    public DrinkType giveMeADrink(int key) throws GoodsExceprion, MoneyNotEnoughExceprion {
+    public DrinkType giveMeADrink(int key) throws GoodsException, MoneyNotEnoughException {
 
         if (!isKeyValid(key)) {
-            throw new GoodsExceprion(key+" - товар с таким кодом отсутствует. Невозможно выдать товар." +
+            throw new GoodsException(key+" - товар с таким кодом отсутствует. Невозможно выдать товар." +
                     "\n Попробуйте еще раз");
         }
 
         Product selected = drinks[key];
         if (!isMoneyEnough(selected)) {
-            throw new MoneyNotEnoughExceprion(this.money+" - такой суммы недостаточно. Внесите больше денег" +
+            throw new MoneyNotEnoughException(this.money+" - такой суммы недостаточно. Внесите больше денег" +
                     "\n Попробуйте ещё раз");
         }
 

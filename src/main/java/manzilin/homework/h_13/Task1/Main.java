@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 
 public class Main {
-    private static VendingMachine vm = new VendingMachine();
+    private static final VendingMachine vm = new VendingMachine();
     private static final Logger log1 = LoggerFactory.getLogger(Main.class);
     public static void main(String[] args) {
         log1.info("Сообщение от slf4j");
@@ -52,7 +52,7 @@ public class Main {
     /**
      * обработка добавления денег в автомат
      * @param money - сумма
-     * @Exception   DONE: добавить обработку исключительной ситуации - замятия
+     * DONE: добавить обработку исключительной ситуации - замятия
      */
     private static void processAddMoney(int money)  {
         double localMoney=0;
@@ -71,7 +71,7 @@ public class Main {
     /**
      * обработка получения напитка
      * @param key - код напитка в автомате
-     * @Exception   DONE: обработать все возможные исключения
+     * DONE: обработать все возможные исключения
      */
     private static void processGetDrink(int key) {
         try{
@@ -81,10 +81,10 @@ public class Main {
             } else {
                 System.out.println("Напиток почему-то не получен...");
             }
-        }catch (MoneyNotEnoughExceprion e){
+        }catch (MoneyNotEnoughException e){
             e.getMessage();
             log1.error("Проблемы с деньгами", e);
-        }catch (GoodsExceprion e){
+        }catch (GoodsException e){
             e.getMessage();
             log1.error("Проблемы с товаром", e);
         } finally {

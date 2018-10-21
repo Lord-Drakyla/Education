@@ -16,12 +16,5 @@ public class Main {
         System.out.println(Calculator.division(100, 50));
         System.out.println(Calculator.multiplication(100, 50));
         System.out.println(Calculator.percentOfNum(100, 50));
-        
     }
-    private static void getResult() {
-
-
-    }
-	
-	
 }

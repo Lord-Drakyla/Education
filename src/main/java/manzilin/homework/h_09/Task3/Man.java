@@ -12,7 +12,7 @@ public class Man extends Homo {
     }
 
     public Man() {
-        this.distance = distance;
+        this(0);
     }
     public Man(int distance) {
         this.distance = distance;

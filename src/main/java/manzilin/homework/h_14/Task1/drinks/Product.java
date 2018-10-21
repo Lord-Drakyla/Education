@@ -1,6 +1,6 @@
 package manzilin.homework.h_14.Task1.drinks;
 
-import manzilin.homework.h_14.Task1.Exceptions.GoodsExceprion;
+import manzilin.homework.h_14.Task1.Exceptions.GoodsException;
 
 
 /**
@@ -22,12 +22,13 @@ public class Product {
      * Меняет количество товара в хранлище
      *
      * @return тип напитка
-     * @Exception  DONE: сделать проверку что товар не кончился
+     * @throws GoodsException
+     * DONE: сделать проверку что товар не кончился
      */
     public DrinkType take() {
         quantity--;
         if (quantity<0) {
-            throw new GoodsExceprion("Товар кончился. Требуется сервисное обслуживание. Извините");
+            throw new GoodsException("Товар кончился. Требуется сервисное обслуживание. Извините");
         }
         return drinkType;
     }

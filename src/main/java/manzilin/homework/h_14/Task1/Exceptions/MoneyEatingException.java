@@ -1,7 +1,7 @@
 package manzilin.homework.h_14.Task1.Exceptions;
 
-public class MoneyEatingException extends VenMachineExceprion {
-    private  double sumEatMoney;
+public class MoneyEatingException extends VenMachineException {
+    private final double sumEatMoney;
 
     public MoneyEatingException(String message, double sumEatMoney) {
         super(message);
