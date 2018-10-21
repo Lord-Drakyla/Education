@@ -7,7 +7,7 @@ public class Column {
     String KEY;
     String[] base1;
     String[] base2;
-    static HashMap<String, Object> Mass = new HashMap<>();;
+    static final HashMap<String, Object> Mass = new HashMap<>();
     HashMap Optimum;
 
     static {
@@ -17,8 +17,8 @@ public class Column {
         Mass.put("g", 9.80665);
         Float[] floats = {0.0f, 0.0f};
         Mass.put("Vm", floats);
-        /**
-         * применение таким образом массива некорректно
+        /*
+          применение таким образом массива некорректно
          */
         Mass.put("Q", floats);
         Mass.put("sigm", floats);
