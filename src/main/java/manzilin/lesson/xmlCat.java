@@ -1,6 +1,9 @@
 package manzilin.lesson;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.StringJoiner;
 
 @XmlRootElement
 public class xmlCat {
@@ -50,4 +53,6 @@ public class xmlCat {
     public void setThings(String[] things) {
         this.things = things;
     }
+
+
 }

@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
     private static Map<String, Person> hashMap;
-    private final String expectedStr = "\nage=15	, name='Василий	, family=Иванов";
+    private final String expectedStr = "Person{\nage=15,\t family='Иванов',\t name='Василий'}";
     private final int expectedHash = -1467136901;
     private final Person expectedPerson = new Person(15, "Василий", "Иванов");
     @BeforeAll
