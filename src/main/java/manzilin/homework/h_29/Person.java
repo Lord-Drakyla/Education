@@ -1,7 +1,5 @@
 package manzilin.homework.h_29;
 
-import java.util.Objects;
-
 public class Person {
     final private int age;
     final private String family;
@@ -25,13 +23,9 @@ public class Person {
         this.family = family;
     }
 
-
-
     /**
      * Можно использовать
      * Objects.hash(age,family,name);
-     *
-     * @return
      */
     @Override
     public int hashCode() {
@@ -43,24 +37,19 @@ public class Person {
 
     /**
      * Соглашение об equals требует чтобы была обработка NPE
-     *
-     * @param obj
-     * @return
      */
     @Override
     public boolean equals(Object obj) {
-        boolean result = true;
+        boolean result;
         if (this == obj) {
             result = true;
         } else if (!(obj instanceof Person)) {
             result = false;
         } else {
             Person person = (Person) obj;
-            if (family != person.family ||
-                    age != person.age ||
-                    name != person.name
-            ) result = false;
-
+            result = family.equals(person.family) &&
+                    age == person.age &&
+                    name.equals(person.name);
         }
         return result;
     }
