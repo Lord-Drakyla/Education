@@ -9,9 +9,9 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MyMapTest {
-    boolean expectedCase1 = true;
-    boolean expectedCase2 = false;
-    Map<String, String> map = new MyMap<>();
+    private final boolean expectedCase1 = true;
+    private final boolean expectedCase2 = false;
+    private final Map<String, String> map = new MyMap<>();
 
     @BeforeEach
     void init() {

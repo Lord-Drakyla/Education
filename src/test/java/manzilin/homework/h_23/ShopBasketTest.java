@@ -9,12 +9,12 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShopBasketTest {
-    String testP = "Минеральная вода";
-    int testQ = 6;
-    String expectedP = "Минеральная вода";
-    int expectedQ = 6;
-    String expectedOut = "\n   product: Минеральная вода\t   quantity: 6";
-    Basket basket = new ShopBasket();
+    private final String testP = "Минеральная вода";
+    private final int testQ = 6;
+    private final String expectedP = "Минеральная вода";
+    private final int expectedQ = 6;
+    private final String expectedOut = "\n   product: Минеральная вода\t   quantity: 6";
+    private final Basket basket = new ShopBasket();
     @BeforeEach
     void init() {
         basket.addProduct(testP, testQ);

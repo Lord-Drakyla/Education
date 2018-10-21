@@ -4,15 +4,14 @@ import org.junit.jupiter.api.*;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Predicate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
-    static Map<String, Person> hashMap;
-    String expectedStr = "\nage=15	, name='Василий	, family=Иванов";
-    int expectedHash = -1467136901;
-    Person expectedPerson = new Person(15, "Василий", "Иванов");
+    private static Map<String, Person> hashMap;
+    private final String expectedStr = "\nage=15	, name='Василий	, family=Иванов";
+    private final int expectedHash = -1467136901;
+    private final Person expectedPerson = new Person(15, "Василий", "Иванов");
     @BeforeAll
     static void setUp() {
         hashMap = new HashMap<>();
@@ -26,7 +25,6 @@ class PersonTest {
         hashMap.put("9", new Person(12, "Василий", "Иванов"));
         hashMap.put("10", new Person(15, "Василий", "Иванов"));
         hashMap.put("11", new Person(12, "Саша", "Иванов"));
-        hashMap.put("12", new Person(15, "Саша", "Иванов"));
         hashMap.put("12", new Person(15, "Саша", "Иванов"));
         for (String str : hashMap.keySet()) {
             System.out.println(str + ":  " + hashMap.get(str));

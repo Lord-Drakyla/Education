@@ -6,10 +6,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
-    private final String EXPECTEDNAME = "Мафусаил";
-    Person person = new Person("Мафусаил", 9999);
-    Person upperperson = new Person("Лафусаил", 9999);
-    Person lowerperson = new Person("Нафусаил", 9999);
+    private final Person person = new Person("Мафусаил", 9999);
+    private final Person upperperson = new Person("Лафусаил", 9999);
+    private final Person lowerperson = new Person("Нафусаил", 9999);
 
     @BeforeEach
     void setUp() {
@@ -18,6 +17,7 @@ class PersonTest {
 
     @Test
     void nameOfPerson() {
+        final String EXPECTEDNAME = "Мафусаил";
         assertEquals(EXPECTEDNAME, person.getName(), "Имя библейского долгожителя");
     }
 

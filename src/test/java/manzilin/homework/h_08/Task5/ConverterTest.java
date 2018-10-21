@@ -7,15 +7,15 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ConverterTest {
-    Contract testContract = new Contract(
+    private final Contract testContract = new Contract(
             0,
             new String[]{},
             null);
-    Act expectedAct = new Act(
+    private final Act expectedAct = new Act(
             1,
             new String[]{},
             LocalDate.now());
-    Act result;
+    private Act result;
 
     /**
      * expected IllegalArgumentException
@@ -32,7 +32,7 @@ class ConverterTest {
     }
 
     @Test
-    void chechBuildInstance() {
+    void checkBuildInstance() {
         assertEquals(expectedAct, new Act(
                 0,
                 new String[]{},
