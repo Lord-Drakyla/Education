@@ -1,6 +1,5 @@
 package manzilin.homework.h_18.Task2;
 
-import manzilin.homework.h_18.Task1.Copy;
 import manzilin.homework.h_18.Task1.ReadClass;
 import manzilin.homework.h_18.Task1.WriteClass;
 

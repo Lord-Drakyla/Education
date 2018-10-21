@@ -31,7 +31,7 @@ public class jsonComics {
 //    }
 
     public String toPrint() {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append("\n year: ").append(this.year);
         sb.append("\n safe_title: ").append(this.safe_title);
         sb.append("\n month: ").append(this.month);

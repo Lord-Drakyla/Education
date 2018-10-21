@@ -1,7 +1,6 @@
 package manzilin.homework.h_22;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 
@@ -11,22 +10,11 @@ import java.util.List;
 public class TestApp {
 
     public static void main(String[] args) {
-
         List<PersonSimple> peopleSimple = new ArrayList<>();
-
-
         peopleSimple.add(new PersonSimple("Alice", 12));
         peopleSimple.add(new PersonSimple("Bill", 11));
         peopleSimple.add(new PersonSimple("Alice", 10));
         peopleSimple.add(new PersonSimple("Bill", 9));
-
-        List<Person> people = new ArrayList<>();
-        people.add(new Person("Alice", 12));
-        people.add(new Person("Bill", 11));
-        people.add(new Person("Alice", 10));
-        people.add(new Person("Bill", 9));
-
-
         int a = 10;
         a = a >> 1;
         System.out.println(a);
@@ -46,7 +34,7 @@ public class TestApp {
                 comprate.compare(peopleSimple.get(0), peopleSimple.get(1))
                         ==
                         -(comprate.compare(peopleSimple.get(1), peopleSimple.get(0))));
-        Collections.sort(peopleSimple, new PersonSuperComparator());
+        peopleSimple.sort(new PersonSuperComparator());
         PersonSuperComparator supcomprate = new PersonSuperComparator();
         System.out.println(supcomprate.compare(peopleSimple.get(0), peopleSimple.get(1)));
         System.out.println(supcomprate.compare(peopleSimple.get(1), peopleSimple.get(0)));

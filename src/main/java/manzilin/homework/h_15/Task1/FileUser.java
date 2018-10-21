@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class FileUser {
     private final String path;
-    private File file;
+    private final File file;
 
     FileUser(String path) throws IOException {
         this.path = path;

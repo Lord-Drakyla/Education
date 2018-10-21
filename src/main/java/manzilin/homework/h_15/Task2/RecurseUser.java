@@ -36,7 +36,7 @@ public class RecurseUser {
     }
 
     private String SpaceCount(int count) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < count - deepS; i++) {
         //for (int i = 0; i < count; i++) {
             sb.append("\t");

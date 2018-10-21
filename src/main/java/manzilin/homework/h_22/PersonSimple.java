@@ -5,8 +5,8 @@ package manzilin.homework.h_22;
  */
 public class PersonSimple {
 
-    private String name;
-    private int age;
+    private final String name;
+    private final int age;
 
 
 

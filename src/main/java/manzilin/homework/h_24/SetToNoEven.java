@@ -21,9 +21,8 @@ public class SetToNoEven {
      * @return - исправленное множество.
      */
     public static Set<String> removeEvenLength(@NotNull Set<String> set) {
-        Set<String> newSet = new LinkedHashSet<>();
         set.remove(null);
-        newSet.addAll(set);
+        Set<String> newSet = new LinkedHashSet<>(set);
         for (String s : set) {
             if (s.length() % 2 == 0) newSet.remove(s);
         }

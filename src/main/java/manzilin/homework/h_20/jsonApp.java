@@ -7,10 +7,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
 import java.net.MalformedURLException;
-import java.net.URL;
 
 public class jsonApp {
-    private static String testUrl = "https://xkcd.com/info.0.json";
+    private static final String testUrl = "https://xkcd.com/info.0.json";
 
     public static void main(String[] args) {
         try {

@@ -2,7 +2,6 @@ package manzilin.homework.h_18.Task1;
 
 import java.io.*;
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 
 
 public class Copy {

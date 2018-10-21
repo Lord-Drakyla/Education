@@ -2,7 +2,7 @@ package manzilin.homework.h_21;
 
 public class Array {
 
-    private int[][] array = new int[10][10];
+    private final int[][] array = new int[10][10];
 
     public Array() {
         fillRandom(this.array);

@@ -1,7 +1,7 @@
 package manzilin.homework.h_23;
 
 public class BasketApp {
-    private static String[] testDataProduct= new String[]{
+    private static final String[] testDataProduct= new String[]{
             "Происхождение видов Чарльза Дарвина",
             "Ложки",
             null,
@@ -9,7 +9,7 @@ public class BasketApp {
             "Яблоки",
             "Минеральная вода"
     };
-    private static int[] testDataQunt= new int[]{1,2,3,4,5,6};
+    private static final int[] testDataQunt= new int[]{1,2,3,4,5,6};
 
     public static void main(String[] args) {
         ShopBasket basketOfAmason = new ShopBasket();

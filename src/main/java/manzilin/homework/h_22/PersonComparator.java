@@ -1,7 +1,5 @@
 package manzilin.homework.h_22;
 
-import java.time.Period;
-import java.util.ArrayList;
 import java.util.Comparator;
 
 /**

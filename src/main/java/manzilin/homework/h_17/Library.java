@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.util.Arrays;
 
 /**
  * Класс библиотеки
@@ -12,7 +13,7 @@ import java.io.*;
  */
 public class Library implements Serializable {
     private static final long serialVersionUID = -2678311517410866040L;
-    private Book[] books = new Book[1000];
+    private final Book[] books = new Book[1000];
     private static final Logger LOG = LoggerFactory.getLogger(Library.class);
     private int lastPos;
 
@@ -46,7 +47,7 @@ public class Library implements Serializable {
      * DONE: отсутствие файла на диске - не ошибка, а частный случай пустой библиотеки
      *
      * @param book - любой вид книги может быть добавлен в библиотеку.
-     * @Exception - Для контроля размера библиотеки.
+     * есть проверка - Для контроля размера библиотеки.
      */
     public void addBook(Book book) {
         LOG.info("Добавляется книга: {}", book.getTitle());
@@ -57,7 +58,7 @@ public class Library implements Serializable {
             }
         } catch (LibraryEnoughException e) {
             e.getMessage();
-            LOG.debug("Библиотека заполнена!!! \n {}", e.getStackTrace().toString(), e);
+            LOG.debug("Библиотека заполнена!!! \n {}", Arrays.toString(e.getStackTrace()), e);
         }
 
         books[lastPos] = book;
