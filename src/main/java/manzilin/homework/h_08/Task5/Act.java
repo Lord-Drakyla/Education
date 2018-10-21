@@ -2,6 +2,7 @@ package manzilin.homework.h_08.Task5;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Act {
 
@@ -9,7 +10,8 @@ public class Act {
     private String[] listOfGoods;
     private LocalDate date;
 
-    Act() {    }
+    Act() {
+    }
 
     Act(int number, String[] listOfGoods, LocalDate date) {
         this.number = (number != 0) ? number : 000001;
@@ -23,5 +25,28 @@ public class Act {
         sb.append("\n   List: " + Arrays.toString(this.listOfGoods));
         sb.append("\n   date: " + this.date);
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean result = true;
+        if (this == obj) {
+            result = true;
+        } else if (!(obj instanceof Act)) {
+            result = false;
+        } else {
+            Act act = (Act) obj;
+            result = number == act.number &&
+                    Arrays.equals(listOfGoods, act.listOfGoods) &&
+                    Objects.equals(date, act.date);
+        }
+        return result;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(number, date);
+        result = 31 * result + Arrays.hashCode(listOfGoods);
+        return result;
     }
 }
