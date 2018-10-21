@@ -1,4 +1,4 @@
-package manzilin.homework.h_03.task_star;;
+package manzilin.homework.h_03.task_star;
 
 
 import java.util.Scanner;
@@ -42,7 +42,7 @@ public class Task_star {
             else{
                 System.out.println("Подходят только числа: ");
             }
-        } while (0==0);
+        } while (true);
         console.close();
     }
 }

@@ -1,4 +1,4 @@
-package manzilin.homework.h_04.task1;;
+package manzilin.homework.h_04.task1;
 
 import java.util.Scanner;
 
@@ -26,7 +26,7 @@ public class Task1 {
 
     static String enterData(Scanner console) {
         String local = console.nextLine();
-        return (local != null & local.length()>0)? local :"0";
+        return (local != null && local.length()>0)? local :"0";
        }
 
 }

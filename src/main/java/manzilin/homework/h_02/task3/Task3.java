@@ -5,7 +5,7 @@ public class Task3 {
 
     public static void main(String[] args) {
         int numSeconds = Integer.decode(args[0]);
-        float Result =numSeconds/3600;
+        float Result = (float) numSeconds/3600;
         System.out.println("Получился "+Result+" час");
 
     }

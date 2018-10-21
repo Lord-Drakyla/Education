@@ -3,7 +3,7 @@ package manzilin.homework.h_04.task4;
 import java.util.Scanner;
 
 public class Task4 {
-    static int firstMember = 1;
+    static final int firstMember = 1;
 
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);

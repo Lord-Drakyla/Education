@@ -1,13 +1,8 @@
-package c;
-
-
+package manzilin.homework.h_06;
 import manzilin.homework.h_06.Class.*;
-
 import java.time.LocalDate;
 
 public class Main {
-
-
     public static void main (String[] arg){
         Person mainHero = new Person();
         Person secondHero = new Person();
