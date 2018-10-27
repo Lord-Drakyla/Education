@@ -43,4 +43,16 @@ class PersonTest {
     void checkStringMethod() {
         assertEquals(expectedStr, hashMap.get("10").toString());
     }
+    @Test
+    void NegCheckEqualsMethod() {
+        assertNotEquals(expectedPerson, hashMap.get("11"));
+    }
+    @Test
+    void NegCheckHashMethod() {
+        assertNotEquals(expectedHash, hashMap.get("11").hashCode());
+    }
+    @Test
+    void NegCheckStringMethod() {
+        assertNotEquals(expectedStr, hashMap.get("11").toString());
+    }
 }

@@ -1,9 +1,9 @@
 package manzilin.homework.h_29;
 
 public class Person {
-    final private int age;
-    final private String family;
-    final private String name;
+    private final  int age;
+    private final  String family;
+    private final  String name;
 
     public Person() {
         this("JOHN");
@@ -33,6 +33,7 @@ public class Person {
         result = 31 * result + family.hashCode();
         result = 31 * result + name.hashCode();
         return result;
+
     }
 
     /**
@@ -56,7 +57,7 @@ public class Person {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Person{");
+        final StringBuilder sb = new StringBuilder("Person{");
         sb.append("\n").append("age=").append(age);
         sb.append(",\t").append(" family='").append(family).append('\'');
         sb.append(",\t").append(" name='").append(name).append('\'');
