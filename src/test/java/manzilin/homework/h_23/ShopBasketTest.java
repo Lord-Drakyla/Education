@@ -9,15 +9,15 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShopBasketTest {
-    private final String testP = "Минеральная вода";
-    private final int testQ = 6;
     private final String expectedP = "Минеральная вода";
+    private final String[] expectedArray = new String[]{expectedP};
     private final int expectedQ = 6;
     private final String expectedOut = "\n   product: Минеральная вода\t   quantity: 6";
     private final Basket basket = new ShopBasket();
+
     @BeforeEach
     void init() {
-        basket.addProduct(testP, testQ);
+        basket.addProduct(expectedP, expectedQ);
     }
 
     @AfterEach
@@ -32,14 +32,20 @@ class ShopBasketTest {
 
     @Test
     void IsProductRemoved() {
-        basket.removeProduct(testP);
+        basket.removeProduct(expectedP);
         assertEquals("[]", Arrays.toString(basket.getProducts().toArray()));
     }
 
     @Test
+    void IsNotProductRemoved() {
+        assertNotEquals("[]", Arrays.toString(basket.getProducts().toArray()));
+    }
+
+    @Test
     void newQuantity() {
-        basket.updateProductQuantity(testP, 8);
-        assertEquals(8, basket.getProductQuantity(expectedP));
+        int newQuantity = 8;
+        basket.updateProductQuantity(expectedP, newQuantity);
+        assertEquals(newQuantity, basket.getProductQuantity(expectedP));
     }
 
     @Test
@@ -49,8 +55,19 @@ class ShopBasketTest {
     }
 
     @Test
+    void isNotEmptyBasket() {
+        assertNotEquals("[]", Arrays.toString(basket.getProducts().toArray()));
+    }
+
+    /**
+     * TODO: Проверитть как-нибудь
+     * <p>
+     * assertArrayEquals(UNexpectedArray, basket.getProducts().toArray());
+     */
+
+    @Test
     void ListOfProducts() {
-        assertEquals("[Минеральная вода]", Arrays.toString(basket.getProducts().toArray()));
+        assertArrayEquals(expectedArray, basket.getProducts().toArray());
     }
 
     @Test

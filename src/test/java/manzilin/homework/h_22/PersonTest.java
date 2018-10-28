@@ -35,5 +35,18 @@ class PersonTest {
     void PreviousPerson() {
         assertEquals(-1, person.compareTo(lowerperson));
     }
+    @Test
+    void notSamePerson() {
+        assertNotEquals(2, person.compareTo(person));
+    }
 
+    @Test
+    void notNextPerson() {
+        assertNotEquals(2, person.compareTo(upperperson));
+    }
+
+    @Test
+    void notPreviousPerson() {
+        assertNotEquals(2, person.compareTo(lowerperson));
+    }
 }
