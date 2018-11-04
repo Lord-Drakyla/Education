@@ -33,7 +33,11 @@ public class Main {
             while (resultSet.next()) {
                 System.out.println(resultSet.getString("name"));
             }
-//            Syntax error in SQL statement "CREATE TALE[*]"; expected "OR, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL, GLOBAL, TEMP, TEMPORARY, TABLE, SYNONYM, PRIMARY, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+//            Syntax error in SQL statement "CREATE TALE[*]"; expected "OR, FORCE, VIEW,
+//            ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE,
+//            AGGREGATE, LINKED, MEMORY, CACHED, LOCAL, GLOBAL, TEMP, TEMPORARY, TABLE, SYNONYM,
+//            PRIMARY, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+
 //            CREATE TALE [42001-197]
 //            statement.execute("CREATE TALE");
             resultSet.close();
