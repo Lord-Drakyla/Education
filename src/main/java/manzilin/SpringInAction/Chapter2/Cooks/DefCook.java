@@ -22,7 +22,6 @@ public class DefCook implements Cook {
         for (Instrument instrument : this.instruments) {
             instrument.use();
         }
-        Dish dish = this.recipe.name();
-        return dish;
+        return this.recipe.name();
     }
 }

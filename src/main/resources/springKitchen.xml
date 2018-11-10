@@ -46,7 +46,7 @@
         </constructor-arg>
         <constructor-arg index="2" value="Петров"/>
     </bean>
-    <bean id="Shef"
+    <bean id="Chef"
           class="manzilin.SpringInAction.Chapter2.Cooks.SingingCook">
         <constructor-arg index="0" ref="Petrov"/>
         <constructor-arg index="1" ref="Song"/>

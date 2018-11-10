@@ -11,7 +11,7 @@ public class Starter {
         Cook cook = (Cook) ctx.getBean("Ivanov");
         cook.Dish();
         System.out.println("-----------------------");
-        Cook chefcook = (Cook) ctx.getBean("Shef");
+        Cook chefcook = (Cook) ctx.getBean("Chef");
         chefcook.Dish();
     }
 }
