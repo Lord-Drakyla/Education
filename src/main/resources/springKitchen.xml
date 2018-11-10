@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/context">
+    <!-- Здесь должны находиться объявления компонентов -->
+    <bean id="FriedEgg" class="manzilin.SpringInAction.Chapter2.Recipes.FriedEgg"/>
+    <bean id="Song" class="manzilin.SpringInAction.Chapter2.Songs.NotBadWeather"/>
+    <bean id="Knife" class="manzilin.SpringInAction.Chapter2.Instruments.DefInstrument"
+          c:mainAction="Нарезать продукты"
+    />
+    <bean id="Pan" class="manzilin.SpringInAction.Chapter2.Instruments.DefInstrument"
+          c:mainAction="Сложить ингредиенты. Положить в печь "
+    />
+    <bean id="Spoon" class="manzilin.SpringInAction.Chapter2.Instruments.DefInstrument"
+          c:mainAction="Помешивать"
+    />
+    <bean id="Oven" class="manzilin.SpringInAction.Chapter2.Instruments.DefInstrument"
+          c:mainAction="Подогревать"
+    />
+    <bean id="Ivanov"
+          class="manzilin.SpringInAction.Chapter2.Cooks.DefCook">
+        <constructor-arg index="0" ref="FriedEgg"/>
+        <constructor-arg index="1">
+            <list>
+                <ref bean="Knife"/>
+                <ref bean="Pan"/>
+                <ref bean="Oven"/>
+                <ref bean="Spoon"/>
+            </list>
+        </constructor-arg>
+        <constructor-arg index="2" value="Иванов"/>
+    </bean>
+    <bean id="Petrov"
+          class="manzilin.SpringInAction.Chapter2.Cooks.DefCook">
+        <constructor-arg index="0" ref="FriedEgg"/>
+        <constructor-arg index="1">
+            <list>
+                <ref bean="Knife"/>
+                <ref bean="Pan"/>
+                <ref bean="Oven"/>
+                <ref bean="Spoon"/>
+            </list>
+        </constructor-arg>
+        <constructor-arg index="2" value="Петров"/>
+    </bean>
+    <bean id="Shef"
+          class="manzilin.SpringInAction.Chapter2.Cooks.SingingCook">
+        <constructor-arg index="0" ref="Petrov"/>
+        <constructor-arg index="1" ref="Song"/>
+    </bean>
+</beans>
+
+
