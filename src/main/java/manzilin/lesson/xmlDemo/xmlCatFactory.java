@@ -1,4 +1,4 @@
-package manzilin.lesson;
+package manzilin.lesson.xmlDemo;
 
 public class xmlCatFactory {
 

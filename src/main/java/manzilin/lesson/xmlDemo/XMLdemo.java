@@ -1,4 +1,4 @@
-package manzilin.lesson;
+package manzilin.lesson.xmlDemo;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
