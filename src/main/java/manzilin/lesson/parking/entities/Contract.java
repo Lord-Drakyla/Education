@@ -1,23 +1,13 @@
-package manzilin.lesson.parking;
+package manzilin.lesson.parking.entities;
 
 import java.util.Date;
 import java.util.Set;
 
-/**
- * DTO -  договор
- */
 public class Contract {
     private int id;
     private Date signDate;
     private Owner owner;
-    private Set <Place> places;
-
-    public Contract(int id, Date signDate, Owner owner, Set<Place> places) {
-        this.id = id;
-        this.signDate = signDate;
-        this.owner = owner;
-        this.places = places;
-    }
+    private Set<Place> places;
 
     public int getId() {
         return id;
@@ -41,5 +31,13 @@ public class Contract {
 
     public void setOwner(Owner owner) {
         this.owner = owner;
+    }
+
+    public Set<Place> getPlaces() {
+        return places;
+    }
+
+    public void setPlaces(Set<Place> places) {
+        this.places = places;
     }
 }
