@@ -1,9 +1,13 @@
-package manzilin.lesson.parking.DAO;
+package manzilin.lesson.parking.dao;
+
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public interface Database {
-    Connection getconnection();
-    Contracts contracts();
-    Owners owners();
+    Connection getConnection() throws SQLException;
+
+    ContractDAO getContractDAO();
+
+    OwnerDAO getOwnerDAO();
 }
