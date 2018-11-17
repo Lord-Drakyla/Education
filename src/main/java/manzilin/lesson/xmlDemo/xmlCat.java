@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.StringJoiner;
 
+/**
+ * todo повторить сериализацию самостоятельно. Загрузить пример с урока.
+ */
 @XmlRootElement
 public class xmlCat {
     private String name;
