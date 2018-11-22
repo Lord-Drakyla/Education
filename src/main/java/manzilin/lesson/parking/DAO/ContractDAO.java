@@ -1,4 +1,4 @@
-package manzilin.lesson.parking.dao;
+package manzilin.lesson.parking.DAO;
 
 public interface ContractDAO {
 }

@@ -1,4 +1,4 @@
-package manzilin.lesson.parking.dao;
+package manzilin.lesson.parking.DAO;
 
 import manzilin.lesson.parking.entities.Owner;
 

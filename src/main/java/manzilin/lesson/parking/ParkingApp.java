@@ -1,6 +1,6 @@
 package manzilin.lesson.parking;
 
-import manzilin.lesson.parking.dao.Database;
+import manzilin.lesson.parking.DAO.Database;
 import manzilin.lesson.parking.entities.Owner;
 import manzilin.lesson.parking.impl.DatabaseImpl;
 

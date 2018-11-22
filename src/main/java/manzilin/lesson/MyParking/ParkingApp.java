@@ -65,6 +65,7 @@ public class ParkingApp {
                     int newId = database.getOwnerDAO().insert(owner);
                     System.out.println("Создана запись с id=" + newId);
                 }
+                break;
                 case "contract": {
                     int owner = scanner.nextInt();
                     Contract contract = new Contract();
@@ -73,6 +74,7 @@ public class ParkingApp {
                     int newId = database.getContractDAO().insert(contract);
                     System.out.println("Создана запись с id=" + newId);
                 }
+                break;
             }
         } catch (SQLException e) {
             System.out.println("Не удалось сохранить элементы: " + e.getMessage());
@@ -85,8 +87,10 @@ public class ParkingApp {
             switch (table) {
                 case "owner":
                     PrintList(database.getOwnerDAO().getList());
+                    break;
                 case "contract":
                     PrintList(database.getContractDAO().getList());
+                    break;
             }
         } catch (SQLException e) {
             System.out.println("Не удалось получить элементы: " + e.getMessage());

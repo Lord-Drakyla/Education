@@ -1,9 +1,7 @@
 package manzilin.lesson.parking.impl;
 
 import org.postgresql.ds.PGPoolingDataSource;
-import manzilin.lesson.parking.dao.ContractDAO;
-import manzilin.lesson.parking.dao.Database;
-import manzilin.lesson.parking.dao.OwnerDAO;
+import manzilin.lesson.parking.DAO.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;

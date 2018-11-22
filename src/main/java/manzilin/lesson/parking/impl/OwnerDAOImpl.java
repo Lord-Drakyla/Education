@@ -1,7 +1,6 @@
 package manzilin.lesson.parking.impl;
 
-import manzilin.lesson.parking.dao.Database;
-import manzilin.lesson.parking.dao.OwnerDAO;
+import manzilin.lesson.parking.DAO.*;
 import manzilin.lesson.parking.entities.Owner;
 
 import java.sql.*;
@@ -21,7 +20,7 @@ public class OwnerDAOImpl implements OwnerDAO {
         try (Connection connection = pool.getConnection();
              Statement statement = connection.createStatement();
             ){
-            ResultSet set = statement.executeQuery("select id_owner, name, birthdate from owners order by id_owner");
+            ResultSet set = statement.executeQuery("select id_owner, name, birthday from owners order by id_owner");
             while (set.next()) {
                 Owner owner = new Owner();
                 owner.setId(set.getInt(1));
@@ -42,7 +41,7 @@ public class OwnerDAOImpl implements OwnerDAO {
     @Override
     public int insert(Owner owner) throws SQLException {
         try (Connection connection = pool.getConnection();
-             PreparedStatement statement = connection.prepareStatement("insert into owners (name, birthdate) values (?,?) returning id_owner")
+             PreparedStatement statement = connection.prepareStatement("insert into owners (name, birthday) values (?,?) returning id_owner")
         ){
             statement.setString(1, owner.getName());
             statement.setDate(2, owner.getBirthDate());
