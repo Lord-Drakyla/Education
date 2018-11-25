@@ -23,10 +23,14 @@ public class Main {
                 "Vending.xml");
         vm = (VendingMachine) ctx.getBean("Machine#777");
         System.out.println("Наши напитки: ");
+        printMenu();
+        start();
+    }
+
+    private static void printMenu() {
         for (String line : vm.typeOfGood()) {
             System.out.println(line);
         }
-        start();
     }
 
     /**
