@@ -2,6 +2,9 @@ package manzilin.lesson.MyParking.entities;
 
 import java.util.Objects;
 
+/**
+ * DTO - места парковки
+ */
 public class Place {
     private int homeNum;
     private int placeId;

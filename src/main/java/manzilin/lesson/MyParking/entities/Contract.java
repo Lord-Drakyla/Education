@@ -2,7 +2,9 @@ package manzilin.lesson.MyParking.entities;
 
 import java.time.LocalDate;
 import java.util.Set;
-
+/**
+ * DTO - договоры
+ */
 public class Contract {
     private int id;
     private LocalDate signDate;

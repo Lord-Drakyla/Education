@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/context">
+    <!-- Здесь должны находиться объявления компонентов -->
+    <bean id="water" class="manzilin.SpringInAction.VendingMachine.Goods.defGood">
+        <constructor-arg index="0" value="Вода"/>
+        <constructor-arg index="1" value="25"/>
+    </bean>
+    <bean id="juice" class="manzilin.SpringInAction.VendingMachine.Goods.defGood">
+        <constructor-arg index="0" value="Сок"/>
+        <constructor-arg index="1" value="25"/>
+    </bean>
+    <bean id="chocolate" class="manzilin.SpringInAction.VendingMachine.Goods.defGood">
+        <constructor-arg index="0" value="Шоколад"/>
+        <constructor-arg index="1" value="40"/>
+    </bean>
+    <bean id="cappucino" class="manzilin.SpringInAction.VendingMachine.Goods.defGood">
+        <constructor-arg index="0" value="Капучино"/>
+        <constructor-arg index="1" value="100"/>
+    </bean>
+    <bean id="coca" class="manzilin.SpringInAction.VendingMachine.Goods.defGood">
+        <constructor-arg index="0" value="Кока-кола"/>
+        <constructor-arg index="1" value="60"/>
+    </bean>
+    <bean id="pepsi" class="manzilin.SpringInAction.VendingMachine.Goods.defGood">
+        <constructor-arg index="0" value="Пепси-кола"/>
+        <constructor-arg index="1" value="60"/>
+    </bean>
+    <bean id="sprite" class="manzilin.SpringInAction.VendingMachine.Goods.defGood">
+        <constructor-arg index="0" value="Спрайт"/>
+        <constructor-arg index="1" value="40"/>
+    </bean>
+    <bean id="fanta" class="manzilin.SpringInAction.VendingMachine.Goods.defGood">
+          
+    <constructor-arg index="0" value="Фанта"/>
+    <constructor-arg index="1" value="45"/>
+</bean>
+
+    <bean id="pr_water" class="manzilin.SpringInAction.VendingMachine.Goods.Product">
+        <constructor-arg index="0" ref="water"/>
+        <constructor-arg index="1" value="10"/>
+    </bean>
+    <bean id="pr_juice" class="manzilin.SpringInAction.VendingMachine.Goods.Product">
+
+        <constructor-arg index="0" ref="juice"/>
+        <constructor-arg index="1" value="100"/>
+    </bean>
+    <bean id="pr_chocolate" class="manzilin.SpringInAction.VendingMachine.Goods.Product">
+
+        <constructor-arg index="0" ref="chocolate"/>
+        <constructor-arg index="1" value="100"/>
+    </bean>
+    <bean id="pr_cappucino" class="manzilin.SpringInAction.VendingMachine.Goods.Product">
+
+        <constructor-arg index="0" ref="cappucino"/>
+        <constructor-arg index="1" value="100"/>
+    </bean>
+
+    <bean id="pr_coca" class="manzilin.SpringInAction.VendingMachine.Goods.Product">
+
+        <constructor-arg index="0" ref="coca"/>
+        <constructor-arg index="1" value="10"/>
+    </bean>
+    <bean id="pr_pepsi" class="manzilin.SpringInAction.VendingMachine.Goods.Product">
+
+        <constructor-arg index="0" ref="pepsi"/>
+        <constructor-arg index="1" value="10"/>
+    </bean>
+    <bean id="pr_sprite" class="manzilin.SpringInAction.VendingMachine.Goods.Product">
+
+        <constructor-arg index="0" ref="sprite"/>
+        <constructor-arg index="1" value="1"/>
+    </bean>
+    <bean id="pr_fanta" class="manzilin.SpringInAction.VendingMachine.Goods.Product">
+
+        <constructor-arg index="0" ref="fanta"/>
+        <constructor-arg index="1" value="3"/>
+    </bean>
+
+
+    <bean id="Machine#777"
+          class="manzilin.SpringInAction.VendingMachine.VendingMachine">
+        <constructor-arg index="0">
+            <list>
+                <ref bean="pr_water"/>
+                <ref bean="pr_juice"/>
+                <ref bean="pr_chocolate"/>
+                <ref bean="pr_cappucino"/>
+                <ref bean="pr_coca"/>
+                <ref bean="pr_fanta"/>
+                <ref bean="pr_pepsi"/>
+                <ref bean="pr_sprite"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
+
+
