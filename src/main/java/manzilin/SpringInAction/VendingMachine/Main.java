@@ -15,11 +15,12 @@ public class Main {
     private static VendingMachine vm;
     private static final Logger LOG = LoggerFactory.getLogger(Main.class);
     private static final Scanner sc = new Scanner(System.in);
+    private static ApplicationContext ctx;
 
     public static void main(String[] args) {
         LOG.info("Начало работы программы");
         LOG.trace("-- main() > получил кол-во параметров: {}", args.length);
-        ApplicationContext ctx = new ClassPathXmlApplicationContext(
+        ctx = new ClassPathXmlApplicationContext(
                 "Vending.xml");
         vm = (VendingMachine) ctx.getBean("Machine#777");
         System.out.println("Наши напитки: ");
@@ -58,6 +59,15 @@ public class Main {
                 }
                 case "help": {
                     printHelp();
+                    break;
+                }
+                case "pavilion": {
+                    printMenu();
+                    break;
+                }
+                case "refresh": {
+                    ((ClassPathXmlApplicationContext) ctx).refresh();
+                    vm = (VendingMachine) ctx.getBean("Machine#777");;
                     break;
                 }
                 default:
@@ -125,6 +135,8 @@ public class Main {
         System.out.println("Введите 'add <количество>' для добавления купюр");
         System.out.println("Введите 'get <код напитка>' для получения напитка");
         System.out.println("Введите 'help' для получения подсказки");
+        System.out.println("Введите 'pavilion' для получения текущего набора товаров");
         System.out.println("Введите 'end' для получения сдачи");
+        System.out.println("Введите 'refresh' для обновления списка товаров");
     }
 }
